@@ -1,0 +1,15 @@
+{
+  "name": "growth-booster-os",
+  "owner": {
+    "name": "Barak Granot",
+    "url": "https://growthboostercrm.com"
+  },
+  "description": "Growth Booster OS for Claude Cowork, by Growth Booster.",
+  "plugins": [
+    {
+      "name": "growth-booster-os",
+      "source": "./growth-booster-os",
+      "description": "Sets up Claude Cowork for an owner-operated business: a six-part setup interview, a daily brief, writing in the owner's voice, lead follow-ups, and a weekly checkup."
+    }
+  ]
+}
