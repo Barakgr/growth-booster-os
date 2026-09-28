@@ -1,6 +1,6 @@
 {
   "name": "growth-booster-os",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Growth Booster OS — sets up Claude Cowork for an owner-operated business in one call. Six-phase resumable setup, daily brief, voice writer, lead follow-up, a weekly checkup that scores the setup and proposes one fix, and an optional Obsidian second brain.",
   "author": {
     "name": "Barak Granot",
