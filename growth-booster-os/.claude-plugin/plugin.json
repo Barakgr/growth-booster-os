@@ -1,11 +1,11 @@
 {
   "name": "growth-booster-os",
-  "version": "0.1.0",
-  "description": "Growth Booster OS — sets up Claude Cowork for an owner-operated business in one call. Six-phase resumable setup, daily brief, voice writer, lead follow-up, and a weekly checkup that scores the setup and proposes one fix.",
+  "version": "0.2.0",
+  "description": "Growth Booster OS — sets up Claude Cowork for an owner-operated business in one call. Six-phase resumable setup, daily brief, voice writer, lead follow-up, a weekly checkup that scores the setup and proposes one fix, and an optional Obsidian second brain.",
   "author": {
     "name": "Barak Granot",
     "url": "https://growthboostercrm.com"
   },
   "homepage": "https://growthboostercrm.com",
-  "keywords": ["onboarding", "daily-brief", "follow-up", "local-business", "voice", "crm"]
+  "keywords": ["onboarding", "daily-brief", "follow-up", "local-business", "voice", "crm", "obsidian", "second-brain"]
 }
