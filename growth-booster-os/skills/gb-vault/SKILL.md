@@ -1,6 +1,6 @@
 ---
 name: gb-vault
-description: Sets up and runs the owner's second brain, an Obsidian vault inside the Cowork workspace that Claude reads and keeps organized. Six-step resumable setup, then capture, build a page, weekly update, refresh the cheat sheet, ask, and monthly health check. Trigger when the owner says "set up my second brain", "set up Obsidian", "connect my vault", "continue vault setup", "file this note", "build a page about", "make a wiki page for", "update my vault", "update my wiki", "update my cheat sheet", "refresh hot", "what does my second brain say about", "vault health check", or types /gb-vault.
+description: Sets up and runs the owner's second brain, an Obsidian vault inside the Cowork workspace that Claude reads and keeps organized. Six-step resumable setup (new vault or an existing one), then open, capture, build a page, weekly update, refresh the cheat sheet, ask, and monthly health check. Trigger when the owner says "set up my second brain", "set up Obsidian", "connect my vault", "continue vault setup", "open my vault", "what's new in my vault", "file this note", "build a page about", "make a wiki page for", "update my vault", "update my wiki", "update my cheat sheet", "refresh hot", "what does my second brain say about", "vault health check", or types /gb-vault.
 ---
 
 # gb-vault: the second brain
@@ -55,6 +55,9 @@ vault:
   next_step: 1
   complete: false
   path: null
+  mode: null            # fresh | as-is | on-top
+  area: null            # only for on-top: the sub-folder that holds inbox/ and wiki/
+  update_day: null
   steps:
     1: { name: plan,        status: pending }
     2: { name: folders,     status: pending }
@@ -70,12 +73,23 @@ Explain in three sentences what a second brain is and what it's for, using the o
 
 > "Do you already use Obsidian for notes? (Type **yes** or **no**.)"
 
-- **No**: we build a fresh vault. Go to Step 2.
-- **Yes**: ask where the existing vault is. If it's already inside the workspace, use it and add only the missing folders. If it's somewhere else, recommend moving it into the workspace (the owner does the move in Finder or File Explorer, Claude never moves it). If they won't move it, stop and explain that Claude can only see what's inside the workspace folder.
+**No:** mode is `fresh`. Go to Step 2.
+
+**Yes:** ask for the vault's full path, and teach them how to copy it (see "Copy a folder path" in `reference/obsidian-setup.md`). Don't try to detect it yourself; Obsidian's own settings live outside the workspace, so you usually can't see them, and that's normal.
+
+- **If the path is outside the workspace folder**, explain in one line that Claude can only reach what's inside the workspace, and offer the move: close Obsidian, copy the whole vault folder into the Claude Cowork folder in Finder or File Explorer, reopen it with **Open folder as vault**, then paste the new path. The owner does the move; Claude never moves it. If they won't move it, stop and say the second brain can't work from outside the workspace.
+- **Once it's inside**, offer the three modes, one line each, and let them pick:
+  1. **Connect as-is**: Claude reads everything and writes only to files the owner names. No folders added, nothing moved. For owners with a system they like.
+  2. **Add folders on top**: Claude adds `inbox/`, `wiki/`, and the three top files inside one sub-folder the owner picks (ask which; suggest `Business`). Everything else stays untouched. The best fit for most owners with an existing vault.
+  3. **Start fresh**: for a vault with nothing worth keeping. Treat it like `fresh`.
+
+Record `path`, `mode`, and `area` in state. If Claude ever suggests a path, it must end inside the workspace folder. A path that sits next to it (like `/Users/name/SecondBrain` beside `/Users/name/Claude Cowork`) is wrong; say so and ask again.
+
+For **as-is**, skip Steps 2, 4, and 5: write only the `## My second brain` block to `claude.md` (with "write only to files I name" in place of the folder rules) and go to Step 3's tests, then finish. In as-is mode there is no inbox or wiki, so **file**, **build**, **update**, and **refresh hot** write only where the owner says; **open**, **ask**, and **health check** work as normal.
 
 ### Step 2: Folders (1 minute)
 
-Create the layout above. Write `_index.md` with a one-line intro and an empty list, `_hot.md` with the three most important facts from `about-me/business.md`, and `_log.md` with today's entry. Then append this section to `claude.md` if it isn't there:
+Create the layout above (for `on-top`, inside the chosen sub-folder; everywhere below, read `SecondBrain/` as that folder). Write `_index.md` with a one-line intro and an empty list, `_hot.md` with the three most important facts from `about-me/business.md`, and `_log.md` with today's entry. Then append this section to `claude.md` if it isn't there:
 
 ```
 ## My second brain
@@ -90,7 +104,12 @@ Record `path` in state.
 
 Walk the owner through `reference/obsidian-setup.md`, section "Install and open the vault", one step at a time, waiting for **done** after each. The owner installs Obsidian themselves from obsidian.md. Claude never downloads or installs anything.
 
-Test: write `inbox/hello-from-claude.md` with one line ("If you can read this in Obsidian, we're connected."). Ask the owner whether they see it in Obsidian's left sidebar. Then move it to `_review/` and say so.
+Then run two tests and report each as passed or failed:
+
+1. **Read test.** Read `_hot.md` (or, for `as-is`, the most recently changed note) and quote its first line back. Ask: "Is that from your vault? (yes / no)". A no means Claude is pointed at the wrong folder; stop and fix the path.
+2. **Write test.** Write `inbox/hello-from-claude.md` with one line ("If you can read this in Obsidian, we're connected."). Ask whether they see it in Obsidian's left sidebar. Then move it to `_review/` and say so.
+
+Both pass before Step 4.
 
 ### Step 4: Plugins and settings (10 minutes)
 
@@ -115,7 +134,7 @@ Show each page in full before saving. Update `_index.md` and `_hot.md`. Every wi
 Set up one scheduled task with the owner. Walk them through it; they click the buttons.
 
 - Name: **Weekly vault update**
-- When: once a week. Friday at 4:00 PM works for most people.
+- When: ask first: "Which day and time do you want me to sort your notes each week? Friday at 4:00 PM works for most people." Record `update_day`.
 - Instructions (paste exactly):
 
 ```
@@ -127,6 +146,9 @@ Tell them to click **Run now** once and approve what it asks, so the first appro
 Set `vault.complete: true`. Close with the habit: "Whenever something comes up, say **file this note:** and tell me. On Fridays I'll sort it. If you need a page right away, say **build a page about** and the topic."
 
 ## Everyday commands
+
+**open** ("open my vault", "what's new in my vault"): the daily starter. Read-only. Report in five lines or fewer: how many inbox notes arrived since the last `_log.md` entry (list their titles), when the last weekly update ran, any wiki page the owner asked about recently, and one suggestion ("3 new notes about pricing; say **update my vault** to fold them in now, or leave them for Friday"). Then remind them to open Obsidian if they want to read along. Change nothing.
+
 
 **file this note** (or "add to my second brain", "remember this in my vault"): save it to `inbox/YYYY-MM-DD-short-title.md` in the owner's words. If it's clearly a correction to a wiki page, say so and ask whether to update that page now or leave it for Friday.
 
