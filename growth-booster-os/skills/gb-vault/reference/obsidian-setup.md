@@ -16,6 +16,13 @@ You'll see `inbox`, `wiki`, and `attachments` in the left sidebar. That's the va
 
 **Wrong folder check:** the vault must be the `SecondBrain` folder *inside* Claude Cowork. If Obsidian made a new folder somewhere else (like Documents), close it and repeat step 4.
 
+## Copy a folder path
+
+- **Mac:** in Finder, right-click the folder, then hold the **Option** key. The menu item changes to **Copy "[folder]" as Pathname**. Click it. It looks like `/Users/yourname/Claude Cowork/SecondBrain`.
+- **Windows:** in File Explorer, hold **Shift** and right-click the folder, then choose **Copy as path**. It looks like `C:\Users\yourname\Claude Cowork\SecondBrain`.
+
+Paste it into the chat. If it doesn't end with `Claude Cowork/...`, the vault is outside the workspace.
+
 ## Settings to change
 
 Open **Settings** (the gear at the bottom left), then **Files and links**:
@@ -45,10 +52,16 @@ Obsidian's CEO publishes a free set of Claude skills that teach Claude Obsidian'
 
 ## Sync to a phone (optional)
 
-Ask two questions: "Do you want your notes on your phone?" and "Would you rather pay a few dollars a month or set something up yourself?"
+Ask two questions, one at a time:
 
-- **Obsidian Sync** (easiest, works on phones). The Standard plan is about $4 a month billed yearly, or $5 month to month, for one vault. Turn on encryption and save the encryption password in a password manager. If it's lost, it can't be recovered. Turn it on from the computer first, so the computer's copy is the master.
+1. "Do you want your notes on your phone or a second computer too?" If no, skip sync entirely.
+2. "Would you rather pay a few dollars a month for the easy way, or do a bit more setup to keep it free?"
+
+Then recommend one:
+
+- **Obsidian Sync** (easy, works on phones). The Standard plan is about $4 a month billed yearly, or $5 month to month, for one vault. Turn on encryption and save the encryption password in a password manager. If it's lost, it can't be recovered. Turn it on from the main computer first, so that copy is the master.
 - **Syncthing** (free, more setup, computers and Android). Good for someone who likes to tinker.
+- **Git with a private repository** (free, keeps every past version). Only for owners who already use GitHub.
 - **Never** put the Claude Cowork folder in iCloud, OneDrive, Dropbox, or Google Drive to "sync" it. It causes duplicate files and broken notes.
 
 Prices change. If the owner asks for exact pricing, send them to obsidian.md/pricing instead of quoting.
