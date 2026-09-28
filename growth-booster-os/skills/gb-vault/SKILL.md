@@ -1,6 +1,6 @@
 ---
 name: gb-vault
-description: Sets up and runs the owner's second brain, an Obsidian vault inside the Cowork workspace that Claude reads and keeps organized. Six-step resumable setup, then capture, weekly update, ask, and monthly health check. Trigger when the owner says "set up my second brain", "set up Obsidian", "connect my vault", "continue vault setup", "file this note", "update my vault", "update my wiki", "what does my second brain say about", "vault health check", or types /gb-vault.
+description: Sets up and runs the owner's second brain, an Obsidian vault inside the Cowork workspace that Claude reads and keeps organized. Six-step resumable setup, then capture, build a page, weekly update, refresh the cheat sheet, ask, and monthly health check. Trigger when the owner says "set up my second brain", "set up Obsidian", "connect my vault", "continue vault setup", "file this note", "build a page about", "make a wiki page for", "update my vault", "update my wiki", "update my cheat sheet", "refresh hot", "what does my second brain say about", "vault health check", or types /gb-vault.
 ---
 
 # gb-vault: the second brain
@@ -124,11 +124,21 @@ Run /gb-vault update. Read SecondBrain/_hot.md and _index.md, then every note in
 
 Tell them to click **Run now** once and approve what it asks, so the first approval is saved with the task. Remind them it only runs when Claude is open and the computer is awake.
 
-Set `vault.complete: true`. Close with the habit: "Whenever something comes up, say **file this note:** and tell me. On Fridays I'll sort it."
+Set `vault.complete: true`. Close with the habit: "Whenever something comes up, say **file this note:** and tell me. On Fridays I'll sort it. If you need a page right away, say **build a page about** and the topic."
 
 ## Everyday commands
 
 **file this note** (or "add to my second brain", "remember this in my vault"): save it to `inbox/YYYY-MM-DD-short-title.md` in the owner's words. If it's clearly a correction to a wiki page, say so and ask whether to update that page now or leave it for Friday.
+
+**build** ("build a page about X", "make a wiki page for X"): make one wiki page now instead of waiting for Friday.
+
+1. Check `_index.md`. If a page on X already exists, say so and offer to update it instead.
+2. Search `inbox/`, `wiki/`, and `about-me/` for everything on X. List what you found in one line ("3 notes and your business file mention warranties").
+3. Ask up to three short questions, one at a time, only for gaps that matter. If the owner says **skip**, leave the gap marked `(not known yet)`. Never fill it in yourself.
+4. Write `wiki/<topic-in-kebab-case>.md`: a one-line summary at the top, then short sections in the owner's customer word, then `Related:` links to other wiki pages, then the `Sources:` line. Save the owner's answers from step 3 as a new inbox note first, so the page has a source.
+5. Show the whole page before saving. On **looks good**, save it, add it to `_index.md`, update `_hot.md` if it changes what matters most, and add one line to `_log.md`.
+
+**refresh hot** ("update my cheat sheet", "refresh hot"): rebuild `_hot.md` only. Read `_index.md`, the wiki pages changed in the last 30 days, and `about-me/business.md`. Keep the 10 to 20 facts the owner would want Claude to know first: current prices, current offers, what's changed recently, the rules that are easy to get wrong. Under 300 words, each fact linked to its page. Show the new version next to the old one and save on **go**.
 
 **update** (weekly, or when the owner says "update my vault"): the scheduled-task routine above. When the owner is present, show a short list of what changed before saving.
 
