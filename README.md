@@ -21,5 +21,6 @@ Built by Barak Granot, Growth Booster. https://growthboostercrm.com
 | /gb-write | "write this in my voice" | Texts, emails, review replies, posts in the owner's voice. |
 | /gb-followup | "follow up with..." | A text, an email, and when to send each. Never sends. |
 | /gb-checkup | "check my setup" | Scores the setup and proposes one fix. |
+| /gb-vault | "set up my second brain" | Optional. An Obsidian second brain: you drop notes in, Claude keeps a small wiki current every week. |
 
 Clients of Growth Booster get setup support and a backup manual setup kit. Questions: https://growthboostercrm.com
