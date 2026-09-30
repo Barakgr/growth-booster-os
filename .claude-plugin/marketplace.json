@@ -10,6 +10,11 @@
       "name": "growth-booster-os",
       "source": "./growth-booster-os",
       "description": "Sets up Claude Cowork for an owner-operated business: a six-part setup interview, a daily brief, writing in the owner's voice, lead follow-ups, and a weekly checkup."
+    },
+    {
+      "name": "growth-booster-second-brain",
+      "source": "./growth-booster-second-brain",
+      "description": "An Obsidian second brain that sets itself up step by step: you drop notes in, Claude keeps a small wiki of your business current every week."
     }
   ]
 }
