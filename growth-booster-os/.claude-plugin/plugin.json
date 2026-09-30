@@ -1,7 +1,7 @@
 {
   "name": "growth-booster-os",
-  "version": "0.3.0",
-  "description": "Growth Booster OS — sets up Claude Cowork for an owner-operated business in one call. Six-phase resumable setup, daily brief, voice writer, lead follow-up, and a weekly checkup that scores the setup and proposes one fix. The Obsidian second brain is now its own plugin, Growth Booster Second Brain, in the same marketplace.",
+  "version": "0.3.1",
+  "description": "Growth Booster OS — sets up Claude Cowork for an owner-operated business in one call. Six-phase resumable setup, daily brief, voice writer, lead follow-up, and a weekly checkup that scores the setup and proposes one fix.",
   "author": {
     "name": "Barak Granot",
     "url": "https://growthboostercrm.com"
