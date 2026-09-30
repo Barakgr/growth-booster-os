@@ -1,0 +1,11 @@
+{
+  "name": "growth-booster-second-brain",
+  "version": "0.1.0",
+  "description": "Growth Booster Second Brain — an Obsidian second brain for an owner-operated business that sets itself up. A resumable, phase-by-phase install (plan, install Obsidian, build the vault, connect Claude, settings, first pages, weekly routine, optional phone sync and Claude chat access), then daily open, file a note, build a page, weekly update, ask, and a monthly health check.",
+  "author": {
+    "name": "Barak Granot",
+    "url": "https://growthboostercrm.com"
+  },
+  "homepage": "https://growthboostercrm.com",
+  "keywords": ["obsidian", "second-brain", "notes", "wiki", "knowledge-base", "local-business", "onboarding"]
+}
