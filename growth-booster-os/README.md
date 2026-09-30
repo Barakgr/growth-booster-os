@@ -13,7 +13,7 @@ Built by Barak Granot, Growth Booster — growthboostercrm.com.
 | `/gb-write` | "write this in my voice", "reply to this review" | Drafts texts, emails, review replies, and posts that sound like the owner, not like a robot. |
 | `/gb-followup` | "follow up with", "missed call from", "the quote went quiet" | Drafts a text and an email for a lead situation, plus when to send each. Never sends. |
 | `/gb-checkup` | "check my setup", "checkup" | Scores the setup 0–100 (Know / Connect / Use / Repeat), names the biggest leak, proposes one fix. |
-| `/gb-vault` | "set up my second brain", "file this note", "update my vault" | Optional. An Obsidian second brain inside the workspace: notes go in, Claude keeps a small wiki up to date weekly. Also "build a page about…" and "update my cheat sheet". |
+| `/gb-vault` | "set up my second brain" | Moved. The second brain is now its own plugin, **Growth Booster Second Brain**, in the same marketplace. This command points owners there. |
 
 ## The setup, phase by phase
 
@@ -39,7 +39,7 @@ projects/
 people/          (optional — one note per customer; skills read it when it's there)
 _review/         (anything the owner asks to delete goes here instead)
 _gb/state.md
-SecondBrain/     (optional — created by /gb-vault: inbox/, wiki/, _index.md, _hot.md)
+SecondBrain/     (optional — created by the Growth Booster Second Brain plugin)
 ```
 
 ## Ground rules baked into every skill
