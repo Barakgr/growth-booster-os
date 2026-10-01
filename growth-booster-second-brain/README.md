@@ -60,7 +60,3 @@ outputs/second-brain/ weekly update and health check reports
 ## Safety
 
 Claude reads the vault and writes only to the inbox, the wiki, and the three top files. It never touches Obsidian's settings folder, never rewrites the owner's notes, and never deletes anything; unwanted files move to `_review/`. The owner installs apps and clicks buttons; Claude never installs software or moves the vault. The vault always stays inside the Cowork workspace, never in iCloud, OneDrive, Dropbox, or Google Drive.
-
-## Coming from /gb-vault
-
-Owners who set up a second brain with `/gb-vault` in Growth Booster OS 0.2.x don't redo anything. The first time `/sb-setup` runs, it carries over the existing vault and marks the finished steps as done.
