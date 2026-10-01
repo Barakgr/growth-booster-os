@@ -9,7 +9,7 @@ Built by Barak Granot, Growth Booster. https://growthboostercrm.com
 1. In Claude Desktop, open **Customize**, then the **Plugins** tab.
 2. Click **Add**, then **Add marketplace**, then **Add from a repository**.
 3. Paste the repository path shown at the top of this page (the part after github.com/), and click **Sync**.
-4. Find **Growth Booster OS** and click **+**. For the second brain, also click **+** on **Growth Booster Second Brain**.
+4. Find **Growth Booster OS** and click **+**.
 5. Open a new Cowork task and type **start setup**.
 
 ## Commands
@@ -24,7 +24,7 @@ Built by Barak Granot, Growth Booster. https://growthboostercrm.com
 
 ## Growth Booster Second Brain
 
-A separate plugin in the same marketplace. An Obsidian second brain that sets itself up step by step: you drop notes in, Claude keeps a small wiki of your business current every week. Works with or without Growth Booster OS. After installing it, open a new Cowork task and type **set up my second brain**.
+A bonus for Growth Booster OS course members, shipped as a separate plugin in the same marketplace. An Obsidian second brain that sets itself up step by step: you drop notes in, Claude keeps a small wiki of your business current every week. Works with or without Growth Booster OS. After installing it, open a new Cowork task and type **set up my second brain**.
 
 | Command | Say this | What it does |
 |---|---|---|
