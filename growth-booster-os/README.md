@@ -1,6 +1,6 @@
 # Growth Booster OS
 
-Sets up Claude Cowork for an owner-operated business in about 75 minutes, usually across two calls with someone from Growth Booster on the line. When it's done, Cowork knows the business, writes in the owner's voice, produces a daily brief, drafts lead follow-ups and review replies, and checks its own setup once a week.
+Sets up Claude Cowork for an owner-operated business in about 75 minutes, self-paced, following the Growth Booster OS Setup course. When it's done, Cowork knows the business, writes in the owner's voice, produces a daily brief, drafts lead follow-ups and review replies, and checks its own setup once a week.
 
 Built by Barak Granot, Growth Booster — growthboostercrm.com.
 
@@ -13,7 +13,6 @@ Built by Barak Granot, Growth Booster — growthboostercrm.com.
 | `/gb-write` | "write this in my voice", "reply to this review" | Drafts texts, emails, review replies, and posts that sound like the owner, not like a robot. |
 | `/gb-followup` | "follow up with", "missed call from", "the quote went quiet" | Drafts a text and an email for a lead situation, plus when to send each. Never sends. |
 | `/gb-checkup` | "check my setup", "checkup" | Scores the setup 0–100 (Know / Connect / Use / Repeat), names the biggest leak, proposes one fix. |
-| `/gb-vault` | "set up my second brain" | Moved. The second brain is now its own plugin, **Growth Booster Second Brain**, in the same marketplace. This command points owners there. |
 
 ## The setup, phase by phase
 
@@ -48,7 +47,7 @@ Reading is automatic. Drafting asks first. Sending is off — the owner sends. D
 
 ## Install
 
-In Cowork, add the plugin file and turn it on. Then open a new task and type **start setup**.
+In Claude Desktop, open **Customize → Plugins → Add → Add marketplace → Add from a repository**, paste the repository path (the part after github.com/), click **Sync**, and turn on **Growth Booster OS**. Then open a new Cowork task and type **start setup**. The Growth Booster OS Setup course walks through every step.
 
 ## Roadmap
 
